@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testable Profile Card</title>
+  <link rel="stylesheet" href="profile.css" />
+</head>
+
+<body>
+  <article data-testid="test-profile-card">
+    <header class="profile-header">
+      <div class="left-container">
+        <div class="avatar-container">
+          <figure>
+            <img 
+              data-testid="test-user-avatar" 
+              src="https://placehold.co/120x120/667eea/ffffff?text=KS"
+              alt="Profile picture of kells"
+            >
+          </figure>
+        </div>
+        <div class="avatar-controls">
+          <label for="avatar-url">
+            Enter avatar URL
+          </label>
+          <input 
+            type="text" 
+            id="avatar-url" 
+            placeholder="https://example.com/avatar.jpg"
+            data-testid="test-avatar-url"
+          >
+          <div id="enter-prompt">Press enter</div>
+        </div>
+      </div>
+      <div>
+        <h2 data-testid="test-user-name">Kells</h2>
+        <p data-testid="test-user-bio">
+          Intermediate Frontend Developer. </br> 
+          Passionate about Cybersecurity and Fullstack software Development. </br>
+          Loves tackling complex problems. </br>
+          Readily engages in meaningful and sensible debates. </br>
+          Also loves hot takes - because why not? 
+        </p>
+        <div class="time-display">
+          <span data-testid="test-user-time"></span>
+        </div>
+      </div>
+    </header>
+
+    <div class="social-section">
+      <nav data-testid="test-user-social-links">
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-twitter"
+          aria-label="Twitter">Twitter 🐦</a>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-github"
+          aria-label="GitHub">Github</a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-linkedin"
+          aria-label="LinkedIn">LinkedIn 💼</a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+          data-testid="test-user-social-instagram" aria-label="Instagram">Instagram 📸</a>
+      </nav>
+    </div>
+
+    <div class="interests-section">
+      <section>
+        <h3>Hobbies</h3>
+        <ul data-testid="test-user-hobbies">
+          <li>Wrting coding</li>
+          <li>Photography</li>
+          <li>Exploring</li>
+          <li>Mountaineering</li>
+          <li>Lawn Tennis</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Dislikes</h3>
+        <ul data-testid="test-user-dislikes">
+          <li>Slow internet</li>
+          <li>Bugs</li>
+          <li>Boring movies</li>
+          <li>Unnecessary meetings</li>
+          <li>Baseless Aruguements</li>
+          <li>Legacy code</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+
+  <script src="profile.js"></script>
+</body>
+
+</html>

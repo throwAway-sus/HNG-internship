@@ -1,0 +1,256 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+article[data-testid="test-profile-card"] {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  max-width: 800px;
+  width: 100%;
+}
+
+.profile-header {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.left-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar-controls {
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+label{
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+input[data-testid="test-avatar-url"]{
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+}
+
+#enter-prompt {
+  opacity: 0;
+  color: #dc2626;
+  font-size: 12px;
+  margin-top: 4px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.avatar-container {
+  position: relative;
+}
+
+figure {
+  margin: 0;
+}
+
+img[data-testid="test-user-avatar"] {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #f8fafc;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+h2[data-testid="test-user-name"] {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e293b;
+  text-align: center;
+  line-height: 1.2;
+}
+
+p[data-testid="test-user-bio"] {
+  font-size: 16px;
+  color: #64748b;
+  text-align: center;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.time-display {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #94a3b8;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Mono', monospace;
+  text-align: center;
+}
+
+.social-section {
+  padding: 0 32px 24px;
+}
+
+nav[data-testid="test-user-social-links"] {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+nav[data-testid="test-user-social-links"] a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border-radius: 9999px;
+  background: #f1f5f9;
+  color: #64748b;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+nav[data-testid="test-user-social-links"] a:hover,
+nav[data-testid="test-user-social-links"] a:focus {
+  background: #e2e8f0;
+  color: #475569;
+  transform: translateY(-2px);
+  outline: 2px solid #cbd5e1;
+  outline-offset: 2px;
+}
+
+.interests-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding: 0 32px 32px;
+}
+
+@media (min-width: 768px) {
+  .profile-header {
+    flex-direction: row;
+    text-align: left;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  .avatar-container {
+    flex-shrink: 0;
+  }
+
+  h2[data-testid="test-user-name"],
+  p[data-testid="test-user-bio"] {
+    text-align: left;
+  }
+
+  .time-display {
+    text-align: left;
+  }
+
+  .interests-section {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+section h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+ul[data-testid="test-user-hobbies"],
+ul[data-testid="test-user-dislikes"] {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+ul[data-testid="test-user-hobbies"] li,
+ul[data-testid="test-user-dislikes"] li {
+  background: #f8fafc;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  transition: all 0.1s ease;
+}
+
+ul[data-testid="test-user-hobbies"] li:hover,
+ul[data-testid="test-user-dislikes"] li:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+
+
+ul[data-testid="test-user-hobbies"] li {
+  background: #dbeafe;
+  color: #1d4ed8;
+  border-color: #bfdbfe;
+}
+
+ul[data-testid="test-user-dislikes"] li {
+  background: #fee2e2;
+  color: #dc2626;
+  border-color: #fecaca;
+}
+
+/* Focus styles for accessibility */
+a:focus,
+button:focus {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+/* Ensure proper word wrapping */
+p[data-testid="test-user-bio"] {
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .profile-header {
+    padding: 24px 16px;
+  }
+
+  .social-section,
+  .interests-section {
+    padding: 0 16px 24px;
+  }
+
+  h2[data-testid="test-user-name"] {
+    font-size: 24px;
+  }
+
+  p[data-testid="test-user-bio"] {
+    font-size: 14px;
+  }
+}
