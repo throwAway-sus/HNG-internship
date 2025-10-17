@@ -7,7 +7,7 @@
 A responsive, semantic HTML/CSS/JS profile card built with accessibility and testability in mind.
 
 ## Live Demo
-[Live Site on Netlify](https://your-netlify-url.netlify.app)
+[Live Site on Netlify](https://kells-hng-stage0.netlify.app/))
 
 ## Features
 - Semantic HTML structure
