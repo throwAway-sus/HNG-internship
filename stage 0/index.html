@@ -9,83 +9,163 @@
 </head>
 
 <body>
-  <article data-testid="test-profile-card">
-    <header class="profile-header">
-      <div class="left-container">
-        <div class="avatar-container">
-          <figure>
-            <img 
-              data-testid="test-user-avatar" 
-              src="https://placehold.co/120x120/667eea/ffffff?text=KS"
-              alt="Profile picture of kells"
-            >
-          </figure>
-        </div>
-        <div class="avatar-controls">
-          <label for="avatar-url">
-            Enter avatar URL
-          </label>
-          <input 
-            type="text" 
-            id="avatar-url" 
-            placeholder="https://example.com/avatar.jpg"
-            data-testid="test-avatar-url"
-          >
-          <div id="enter-prompt">Press enter</div>
-        </div>
-      </div>
-      <div>
-        <h2 data-testid="test-user-name">Kells</h2>
-        <p data-testid="test-user-bio">
-          Intermediate Frontend Developer. </br> 
-          Passionate about Cybersecurity and Fullstack software Development. </br>
-          Loves tackling complex problems. </br>
-          Readily engages in meaningful and sensible debates. </br>
-          Also loves hot takes - because why not? 
-        </p>
-        <div class="time-display">
-          <span data-testid="test-user-time"></span>
-        </div>
-      </div>
-    </header>
+  <div class="main-container">
+    <nav>
+      <ul>
+        <li><a href="#" class="nav-link active" data-page="profile">Profile</a></li>
+        <li><a href="#" class="nav-link" data-page="contact">Contact Us</a></li>
+        <li><a href="#" class="nav-link" data-page="about">About Me</a></li>
+      </ul>
+    </nav>
 
-    <div class="social-section">
-      <nav data-testid="test-user-social-links">
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-twitter"
-          aria-label="Twitter">Twitter 🐦</a>
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-github"
-          aria-label="GitHub">Github</a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-linkedin"
-          aria-label="LinkedIn">LinkedIn 💼</a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
-          data-testid="test-user-social-instagram" aria-label="Instagram">Instagram 📸</a>
-      </nav>
-    </div>
+    <div class="dynamic-content-container">
+      <!-- Profile Page -->
+      <article data-testid="test-profile-card" id="profile-page" class="page active">
+        <header class="profile-header">
+          <div class="left-container">
+          <div class="avatar-container">
+            <figure>
+              <img data-testid="test-user-avatar" src="https://placehold.co/120x120/667eea/ffffff?text=KS"
+              alt="Profile picture of Kells">
+            </figure>
+          </div>
+          <div class="avatar-controls">
+            <label for="avatar-url">Enter avatar URL</label>
+            <input type="text" id="avatar-url" placeholder="https://example.com/avatar.jpg" data-testid="test-avatar-url">
+            <div id="enter-prompt">Press enter</div>
+          </div>
+        </div>
 
-    <div class="interests-section">
-      <section>
-        <h3>Hobbies</h3>
-        <ul data-testid="test-user-hobbies">
-          <li>Wrting coding</li>
-          <li>Photography</li>
-          <li>Exploring</li>
-          <li>Mountaineering</li>
-          <li>Lawn Tennis</li>
-        </ul>
-      </section>
-      <section>
-        <h3>Dislikes</h3>
-        <ul data-testid="test-user-dislikes">
-          <li>Slow internet</li>
-          <li>Bugs</li>
-          <li>Boring movies</li>
-          <li>Unnecessary meetings</li>
-          <li>Baseless Aruguements</li>
-          <li>Legacy code</li>
-        </ul>
-      </section>
+        <div>
+          <h2 data-testid="test-user-name">Kells</h2>
+          <p data-testid="test-user-bio">
+            Intermediate Frontend Developer. </br>
+            Passionate about Cybersecurity and Fullstack software Development. </br>
+            Loves tackling complex problems. </br>
+            Readily engages in meaningful and sensible debates. </br>
+            Also loves hot takes - because why not?
+          </p>
+          <div class="time-display">
+            <span data-testid="test-user-time"></span>
+          </div>
+        </div>
+        </header>
+
+        <div class="social-section">
+          <nav data-testid="test-user-social-links">
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-twitter"
+              aria-label="Twitter">Twitter 🐦</a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-github"
+            aria-label="GitHub">Github</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-linkedin"
+            aria-label="LinkedIn">LinkedIn 💼</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+            data-testid="test-user-social-instagram" aria-label="Instagram">Instagram 📸</a>
+          </nav>
+        </div>
+
+        <div class="interests-section">
+          <section>
+            <h3>Hobbies</h3>
+            <ul data-testid="test-user-hobbies">
+              <li>Writing code</li>
+              <li>Photography</li>
+              <li>Exploring</li>
+              <li>Mountaineering</li>
+              <li>Lawn Tennis</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Dislikes</h3>
+            <ul data-testid="test-user-dislikes">
+              <li>Slow internet</li>
+              <li>Bugs</li>
+              <li>Boring movies</li>
+              <li>Unnecessary meetings</li>
+              <li>Baseless arguments</li>
+              <li>Legacy code</li>
+            </ul>
+          </section>
+        </div>
+      </article>
+
+      <!-- Contact Page -->
+      <main id="contact-page" class="page" data-testid="test-contact-page">
+        <h1>Contact Us</h1>
+        <form class="contact-form" data-testid="test-contact-form">
+          <div class="form-group">
+            <label for="contact-name">Full Name</label>
+            <input type="text" id="contact-name" data-testid="test-contact-name" aria-describedby="error-name">
+            <div id="error-name" class="error-message" data-testid="test-contact-error-name"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-email">Email</label>
+            <input type="email" id="contact-email" data-testid="test-contact-email" aria-describedby="error-email">
+            <div id="error-email" class="error-message" data-testid="test-contact-error-email"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-subject">Subject</label>
+            <input type="text" id="contact-subject" data-testid="test-contact-subject" aria-describedby="error-subject">
+            <div id="error-subject" class="error-message" data-testid="test-contact-error-subject"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" data-testid="test-contact-message" aria-describedby="error-message"></textarea>
+            <div id="error-message" class="error-message" data-testid="test-contact-error-message"></div>
+          </div>
+
+          <button type="submit" class="submit-btn" data-testid="test-contact-submit">Send Message</button>
+
+          <div class="success-message" data-testid="test-contact-success">
+            Thank you! Your message has been sent successfully.
+          </div>
+        </form>
+      </main>
+      
+      <!-- About Page -->
+      <main id="about-page" class="page" data-testid="test-about-page">
+        <h1>About Me</h1>
+        <section class="about-section">
+          <h2>Bio</h2>
+          <p data-testid="test-about-bio">
+            I'm a Frontend Dev, who is also passionate about Cybersecurity, Fullstack software Development and also solving problems, maybe complex problems.
+          </p>
+        </section>
+        
+        <section class="about-section">
+          <h2>Goals in this program</h2>
+          <p data-testid="test-about-goals">
+            My primary goal is to get my hands on real world problems that encompasses frontend development, and also maybe network while at it.
+          </p>
+        </section>
+
+        <section class="about-section">
+          <h2>Areas of low confidence</h2>
+          <p data-testid="test-about-confidence">
+            I want to improve my skills in backend development mainly, and also my networking skills. Pretty bad at both
+          </p>
+        </section>
+        
+        <section class="about-section">
+          <h2>Note to future self</h2>
+          <p data-testid="test-about-future-note">
+            Remember you gave HNG your best shot.
+          </p>
+        </section>
+        
+        <section class="about-section">
+          <h2>Extra thoughts</h2>
+          <p data-testid="test-about-extra">
+            What if i don't make it all the way through HNG? </br>
+            Nahhhhh, scratch that, dosen't even sound right.
+          </p>
+        </section>
+      </main>
     </div>
-  </article>
+  </div>
 
   <script src="profile.js"></script>
 </body>
