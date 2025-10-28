@@ -1,0 +1,13 @@
+{# 
+  This template renders the flash messages from the controller.
+  It replaces react-hot-toast.
+#}
+{% for label, messages in app.flashes %}
+    <div class="flash-messages">
+        {% for message in messages %}
+            <div class="flash-message flash-message--{{ label }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+{% endfor %}

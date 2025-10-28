@@ -1,0 +1,111 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="page-wrap">
+    <section class="hero-section">
+        <div class="circle blue"></div>
+        <div class="circle green"></div>
+        <div class="circle gold"></div>
+        <div class="circle orange"></div>
+        <div class="circle pink"></div>
+
+        <div class="container px-38">
+            <div class="hero-inner">
+
+                <div class="hero-text-block">
+                    <h1 class="hero-title">Ticketi•fy</h1>
+
+                    <p class="hero-description">
+                        Streamline your support workflow with our simple ticket management system.
+                        Create, update, and track tickets quickly — built with modern web technologies.
+                    </p>
+
+                    {% if not app.user %}
+                        <div class="hero-buttons">
+                            <a href="{{ path('auth_signup') }}" class="primary-btn" aria-label="Create account">
+                                Get Started
+                            </a>
+                            <a href="{{ path('auth_login') }}" class="nav-btn" aria-label="Login">
+                                Login
+                            </a>
+                        </div>
+                    {% endif %}
+
+                </div>
+
+                <div class="stats-card-wrap">
+                    <div class="card" aria-hidden="true">
+                        <h3>Quick stats</h3>
+                        <div class="quick-stats">
+                            <div class="stats-item">
+                                <div class="label">Open</div>
+                                <div class="value">3</div>
+                            </div>
+                            <div class="stats-item">
+                                <div class="label">In Progress</div>
+                                <div class="value">1</div>
+                            </div>
+                            <div class="stats-item">
+                                <div class="label">Closed</div>
+                                <div class="value">1</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="wave-wrapper">
+            {# Replace with equivalent Twig SVG include #}
+            {% include 'components/hero_wave.svg.twig' %}
+        </div>
+
+    </section>
+
+    <div class="container">
+        <section class="features-section">
+            <h2>Features</h2>
+
+            <div class="feature-grid">
+
+                <div class="feature-item">
+                    <span class="icon">🎫</span>
+                    <div>
+                        <div class="feature-title">Tickets</div>
+                        <div class="feature-desc">Create and manage tickets</div>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <span class="icon">🔍</span>
+                    <div>
+                        <div class="feature-title">Filters</div>
+                        <div class="feature-desc">Search & filter tickets</div>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <span class="icon">✨</span>
+                    <div>
+                        <div class="feature-title">Light UI</div>
+                        <div class="feature-desc">Clean SaaS card UI</div>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <span class="icon">💸</span>
+                    <div>
+                        <div class="feature-title">Free</div>
+                        <div class="feature-desc">No recurring payments</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,60 @@
+{% if tickets is empty %}
+    <p class="empty-state">No tickets yet</p>
+{% else %}
+    <ul class="ticket-list">
+        {% for ticket in tickets %}
+            <li class="ticket-list-item">
+
+                <div class="ticket-item-left">
+                    <span class="avatar">{{ ticket.title|first|upper }}</span>
+
+                    <div>
+                        <div class="ticket-title" style="font-weight:700;">
+                            {{ ticket.title }}
+                        </div>
+                        <small class="ticket-desc small">
+                            {{ ticket.description }}
+                        </small>
+                    </div>
+                </div>
+
+                <div class="ticket-item-right">
+
+                    <span class="badge badge--{{ ticket.status }}">
+                        {{ ticket.status|replace({'_':' '}) }}
+                    </span>
+
+                    <span class="priority small priority--{{ ticket.priority }}">
+                        {{ ticket.priority }}
+                    </span>
+
+                    <div class="ticket-actions-group">
+
+                        <a class="inline-link"
+                           aria-label="View {{ ticket.title }}"
+                           href="{{ path('ticket_detail', { id: ticket.id }) }}">
+                            View
+                        </a>
+
+                        <a class="inline-link"
+                           aria-label="Edit {{ ticket.title }}"
+                           href="{{ path('ticket_edit', { id: ticket.id }) }}">
+                            Edit
+                        </a>
+
+                        <form action="{{ path('ticket_delete', { id: ticket.id }) }}"
+                              method="POST"
+                              onsubmit="return confirm('Are you sure you want to delete this ticket?');">
+                            <button type="submit"
+                                    class="inline-link inline-link--danger">
+                                Delete
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
+
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}

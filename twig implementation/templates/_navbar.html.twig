@@ -1,0 +1,52 @@
+{% set session = app.session.get('user_email') %}
+{% set current_path = app.request.pathinfo %}
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+        <div class="brand-container">
+            <div class="brand">Ticketi•fy</div>
+            <div style="display: none" class="sr-only" aria-hidden></div>
+        </div>
+
+        <div class="nav-container">
+            <button class="hamburger js-mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
+                    <path d="M4 6h16M4 12h16M4 18h16" stroke="var(--color-text)" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </button>
+
+            <div class="nav-links js-nav-links">
+                <a href="/" class="styled-nav-link {% if current_path == '/' %}active{% endif %}">Home</a>
+                {% if session %}
+                    <a href="/dashboard" class="styled-nav-link {% if current_path starts with '/dashboard' %}active{% endif %}">Dashboard</a>
+                    <a href="/tickets" class="styled-nav-link {% if current_path starts with '/tickets' %}active{% endif %}">Tickets</a>
+                    <a href="/auth/logout" class="logout-button styled-nav-link">Logout</a>
+                {% else %}
+                    <a href="/auth/login" class="styled-nav-link {% if current_path == '/auth/login' %}active{% endif %}">Login</a>
+                    <a href="/auth/signup" class="styled-nav-link {% if current_path == '/auth/signup' %}active{% endif %}">Sign up</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const toggleButton = document.querySelector('.js-mobile-toggle');
+        const navLinks = document.querySelector('.js-nav-links');
+
+        toggleButton.addEventListener('click', () => {
+            const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true' || false;
+            toggleButton.setAttribute('aria-expanded', !isExpanded);
+            navLinks.classList.toggle('mobile-open'); // Toggles the CSS class for visibility
+        });
+
+        // Close menu on link click (important for mobile UX)
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                toggleButton.setAttribute('aria-expanded', 'false');
+                navLinks.classList.remove('mobile-open');
+            });
+        });
+    });
+</script>

@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tickets{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="page-header">
+            <div class="header-info">
+                <h1>Tickets</h1>
+                <p>Create and manage tickets</p>
+            </div>
+            
+            <form action="{{ path('ticket_list') }}" method="GET" class="search-filter-group">
+                <input
+                    aria-label="Search tickets"
+                    placeholder="Search tickets..."
+                    name="q"
+                    value="{{ current_query }}"
+                    class="input"
+                />
+                <select aria-label="Filter status" name="status" class="select" onchange="this.form.submit()">
+                    <option value="all" {{ current_status == 'all' ? 'selected' }}>All statuses</option>
+                    <option value="open" {{ current_status == 'open' ? 'selected' }}>Open</option>
+                    <option value="in_progress" {{ current_status == 'in_progress' ? 'selected' }}>In Progress</option>
+                    <option value="closed" {{ current_status == 'closed' ? 'selected' }}>Closed</option>
+                </select>
+                <button type="submit" class="button button--primary" aria-label="Search">Search</button>
+            </form>
+        </div>
+
+        <div class="tickets-grid-layout">
+            <div>
+                <div class="card">
+                    <h3 style="margin-top: 0;">All Tickets</h3>
+                    {% include '_ticket_list.html.twig' with { tickets: tickets } %}
+                </div>
+            </div>
+
+            <div>
+                <div class="card">
+                    <h3 style="margin-top: 0;">Create Ticket</h3>
+                    
+                    <form action="{{ path('ticket_create') }}" method="POST">
+                        <div class="form-row">
+                            <label for="title" class="label">Title *</label>
+                            <input type="text" id="title" name="title" required class="input" />
+                        </div>
+                        <div class="form-row">
+                            <label for="description" class="label">Description *</label>
+                            <textarea id="description" name="description" rows="4" required class="textarea"></textarea>
+                        </div>
+                        <div class="form-row">
+                            <label for="status" class="label">Status</label>
+                            <select id="status" name="status" class="select">
+                                <option value="open">Open</option>
+                                <option value="in_progress">In Progress</option>
+                                <option value="closed">Closed</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <label for="priority" class="label">Priority</label>
+                            <select id="priority" name="priority" class="select">
+                                <option value="low">Low</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+                        <div class="button-row">
+                            <button type="submit" class="button button--primary">Create Ticket</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

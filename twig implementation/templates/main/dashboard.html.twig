@@ -1,0 +1,48 @@
+{# Replaces DashboardPage.jsx #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="dashboard-grid grid-3">
+            <div class="card">
+                <div class="ticket-card-content">
+                    <div class="ticket-count" style="background: #ecfdf5;">{{ stats.total }}</div>
+                    <div class="ticket-info">
+                        <div class="ticket-label">Total Tickets</div>
+                        <div class="ticket-number">{{ stats.total }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="ticket-card-content">
+                    <div class="ticket-count" style="background: #fff7ed;">{{ stats.open }}</div>
+                    <div class="ticket-info">
+                        <div class="ticket-label">Open</div>
+                        <div class="ticket-number">{{ stats.open }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="ticket-card-content">
+                    <div class="ticket-count" style="background: #f1f5f9;">{{ stats.closed }}</div>
+                    <div class="ticket-info">
+                        <div class="ticket-label">Resolved</div>
+                        <div class="ticket-number">{{ stats.closed }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-wrapper">
+            <div class="card">
+                <h3 class="section-title">Recent Tickets</h3>
+                {# Render the partial with the recent_tickets variable #}
+                {% include '_ticket_list.html.twig' with { tickets: recent_tickets } %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

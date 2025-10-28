@@ -1,0 +1,47 @@
+
+index:
+    path: /
+    controller: App\Controller\MainController::landing
+dashboard:
+    path: /dashboard
+    controller: App\Controller\MainController::dashboard
+
+# AuthController
+auth_login:
+    path: /auth/login
+    controller: App\Controller\AuthController::login
+auth_signup:
+    path: /auth/signup
+    controller: App\Controller\AuthController::signup
+auth_logout:
+    path: /auth/logout
+    controller: App\Controller\AuthController::logout
+
+# TicketController (CRUD)
+ticket_list:
+    path: /tickets
+    controller: App\Controller\TicketController::list
+ticket_create:
+    path: /tickets/create
+    controller: App\Controller\TicketController::create
+    methods: [POST]
+ticket_detail:
+    path: /tickets/{id}
+    controller: App\Controller\TicketController::detail
+ticket_update_status:
+    path: /tickets/{id}/update-status
+    controller: App\Controller\TicketController::updateStatus
+    methods: [POST]
+ticket_delete:
+    path: /tickets/{id}/delete
+    controller: App\Controller\TicketController::delete
+    methods: [POST]
+ticket_edit:
+    path: /tickets/{id}/edit
+    controller: App\Controller\TicketController::edit
+ticket_update:
+    path: /tickets/{id}/update
+    controller: App\Controller\TicketController::update
+    methods: [POST]
+
+

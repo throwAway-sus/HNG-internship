@@ -1,0 +1,17 @@
+{
+    "name": "jokermario/twigimplementation",
+    "autoload": {
+        "psr-4": {
+            "Jokermario\\Twigimplementation\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "UnSiMpLYkells",
+            "email": "nwachukwukells007@gmail.com"
+        }
+    ],
+    "require": {
+        "sculpin/sculpin": "*"
+    }
+}

@@ -1,0 +1,56 @@
+{# Replaces LoginPage.jsx #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Sign In{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="auth-wrapper">
+            <div class="card auth-card">
+                <h1 class="auth-title">Sign in to your account</h1>
+                <p class="auth-subtle">Welcome back — sign in.</p>
+
+                <form action="{{ path('auth_login') }}" method="POST">
+                    <div class="form-row">
+                        <label for="email" class="label">Email address</label>
+                        <input
+                            id="email"
+                            name="email"
+                            aria-label="Email address"
+                            value="{{ old_email|default('') }}" {# Retains email on error #}
+                            type="email"
+                            required
+                            class="input"
+                        />
+                    </div>
+
+                    <div class="form-row">
+                        <label for="password" class="label">Password</label>
+                        <input
+                            id="password"
+                            name="password"
+                            aria-label="Password"
+                            type="password"
+                            required
+                            class="input"
+                        />
+                    </div>
+
+                    {% if error_message %}
+                        <div class="auth-error">{{ error_message }}</div>
+                    {% endif %}
+
+                    <div class="form-row auth-submit-row">
+                        <button type="submit" class="button button--primary">
+                            Sign in
+                        </button>
+                    </div>
+                </form>
+
+                <p class="auth-bottom-text">
+                    Don't have an account? <a href="{{ path('auth_signup') }}" class="auth-bottom-link">Sign up</a>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
