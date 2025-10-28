@@ -13,5 +13,10 @@
     ],
     "require": {
         "sculpin/sculpin": "*"
+    },
+    "config": {
+        "allow-plugins": {
+            "sculpin/sculpin-theme-composer-plugin": true
+        }
     }
 }
