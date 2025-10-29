@@ -111,8 +111,9 @@ You will need the following tools installed on your machine:
 ## Running Each Implementation
     
 1. if react or vue, navigate to their given folder:
-   ```
-    cd vue-implementation or cd react-inplementation
+    ```
+    cd stage\ 2 
+    cd vue\ implementation or cd react\ implementation
     ```
 2.  Install the necessary Node.js dependencies:
     ```sh
@@ -130,7 +131,8 @@ The Twig version requires PHP and Composer to serve the templates.
 
 1.  Navigate to the Twig app directory:
     ```sh
-    cd twig-implementation
+    cd stage\ 2
+    cd twig\ implementation
     ```
 2.  Install the PHP dependencies (including Twig) using Composer:
     ```sh
