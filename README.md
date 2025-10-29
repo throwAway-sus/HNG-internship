@@ -27,6 +27,13 @@ This stage introduces internal page navigation (Profile, About, Contact) without
 ## Live Demo
 [Live Site on Netlify](https://kells-hng-stage1.netlify.app/)
 
+## Run Locally
+```bash
+git clone https://github.com/throwAway-sus/HNG-internship.git
+cd stage\ 0
+open index.html
+```
+
      STAGE 2
 
 # Ticket Management Web App
@@ -98,7 +105,7 @@ You will need the following tools installed on your machine:
 
 1.  Clone the repository to your local machine:
     ```sh
-    git clone [https://github.com/throwAway-sus/HNG-internship.git](https://github.com/throwAway-sus/HNG-internship.git)
+    git clone https://github.com/throwAway-sus/HNG-internship.git
     cd HNG-internship
     ```
 ## Running Each Implementation
