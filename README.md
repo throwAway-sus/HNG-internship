@@ -58,28 +58,82 @@ The primary goal of this project is to demonstrate mastery in structuring fronte
     - **State Management:** React Context and Zustand
     - **Styling:** Styled-Components
     - **Notifications:** `react-hot-toast`
-    - **[Live Site on Netlify](https://kells-hng-stage1.netlify.app/](https://kells-hng-stage2-reactimpt.netlify.app/))**
+
+## Live Demo
+[Live Site on Netlify](https://kells-hng-stage2-reactimpt.netlify.app/)
 
 **2. Vue.js Implementation (`/vue-app/`)**
     - **Framework:** Vue 3 (Composition API)
     - **Routing:** Vue Router
     - **Styling:** Scoped CSS (or Tailwind)
     - **Notifications:** `vue-toastification`
-    - **[Live Site on Netlify](https://kells-hng-stage1.netlify.app/](https://kells-hng-stage2-vueimpt.netlify.app/))**
+
+## Live Demo
+[Live Site on Netlify](https://kells-hng-stage2-vueimpt.netlify.app/)
 
  **3. Twig Implementation (`/twig-app/`)**
-    - **Framework:** Symphony
+    - **Framework:** Symfony
     - **Templating:** Twig
     - **Backend (for rendering):** A minimal **PHP** application (using `composer` for dependencies).
     - **Frontend Logic:** Vanilla JavaScript (for form validation and interactivity)
-    - **[Live Site on Render]()**
+
+## Live Demo
+[Live Site on Render]()
     
 
 
 
 ## Run Locally
-```bash
-git clone https://github.com/throwAway-sus/profile-card.git
-cd profile-card
-open index.html
 
+Follow these instructions to clone the project and run each implementation locally.
+
+### Prerequisites
+
+You will need the following tools installed on your machine:
+
+* **Node.js** (v18 or later) & **npm** / **yarn** (for React and Vue)
+* **PHP** (v8.0 or later) (for the Twig version)
+* **Composer** (PHP package manager) (for the Twig version)
+* **Git**
+* 
+
+### Installation
+
+1.  Clone the repository to your local machine:
+    ```sh
+    git clone [https://github.com/throwAway-sus/HNG-internship.git](https://github.com/throwAway-sus/HNG-internship.git)
+    cd HNG-internship
+    ```
+## Running Each Implementation
+    
+1. if react or vue, navigate to their given folder:
+   ```
+    cd vue-implementation or cd rect-inplementation
+    ```
+2.  Install the necessary Node.js dependencies:
+    ```sh
+    npm install
+    ```
+3.  Start the development server:
+    ```sh
+    npm run dev
+    ```
+4.  Open your browser and visit the URL provided in your terminal (usually **`http://localhost:5173`**).
+
+### Running the Twig Version (Locally)
+
+The Twig version requires PHP and Composer to serve the templates.
+
+1.  Navigate to the Twig app directory:
+    ```sh
+    cd twig-implementation
+    ```
+2.  Install the PHP dependencies (including Twig) using Composer:
+    ```sh
+    composer install
+    ```
+3.  Start the PHP built-in web server.
+    ```sh
+    php -S localhost:8000 -t public
+    ```
+4.  Open your browser and visit **`http://localhost:8000`**.
