@@ -59,7 +59,7 @@ The primary goal of this project is to demonstrate mastery in structuring fronte
     - **Styling:** Styled-Components
     - **Notifications:** `react-hot-toast`
 
-## Live Demo
+## React Live Demo
 [Live Site on Netlify](https://kells-hng-stage2-reactimpt.netlify.app/)
 
 **2. Vue.js Implementation (`/vue-app/`)**
@@ -68,7 +68,7 @@ The primary goal of this project is to demonstrate mastery in structuring fronte
     - **Styling:** Scoped CSS (or Tailwind)
     - **Notifications:** `vue-toastification`
 
-## Live Demo
+## Vue Live Demo
 [Live Site on Netlify](https://kells-hng-stage2-vueimpt.netlify.app/)
 
  **3. Twig Implementation (`/twig-app/`)**
@@ -77,11 +77,9 @@ The primary goal of this project is to demonstrate mastery in structuring fronte
     - **Backend (for rendering):** A minimal **PHP** application (using `composer` for dependencies).
     - **Frontend Logic:** Vanilla JavaScript (for form validation and interactivity)
 
-## Live Demo
+## TWig Live Demo
 [Live Site on Render]()
     
-
-
 
 ## Run Locally
 
@@ -95,7 +93,6 @@ You will need the following tools installed on your machine:
 * **PHP** (v8.0 or later) (for the Twig version)
 * **Composer** (PHP package manager) (for the Twig version)
 * **Git**
-* 
 
 ### Installation
 
@@ -108,7 +105,7 @@ You will need the following tools installed on your machine:
     
 1. if react or vue, navigate to their given folder:
    ```
-    cd vue-implementation or cd rect-inplementation
+    cd vue-implementation or cd react-inplementation
     ```
 2.  Install the necessary Node.js dependencies:
     ```sh
